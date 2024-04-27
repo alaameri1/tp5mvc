@@ -1,0 +1,11 @@
+﻿@model IEnumerable<tp5mvc.Models.RestosModel.Restaurant>
+
+<h1>Restaurants with Average Rating >= 3.5</h1>
+<ul>
+    @foreach (var restaurant in Model)
+    {
+        <li>
+            @restaurant.NomResto - Average Rating: @restaurant.LesAvis.Average(a => a.Note)
+        </li>
+    }
+</ul>

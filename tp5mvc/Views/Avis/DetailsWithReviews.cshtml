@@ -1,0 +1,18 @@
+﻿@model tp5mvc.Models.RestosModel.Restaurant
+
+<h1>@Model.NomResto Reviews</h1>
+<ul>
+    @if (Model.LesAvis != null)
+    {
+        foreach (var avis in Model.LesAvis)
+        {
+            <li>
+                @avis.NomPersonne: @avis.Note - "@avis.Commentaire"
+            </li>
+        }
+    }
+    else
+    {
+        <li>No reviews found for this restaurant.</li>
+    }
+</ul>

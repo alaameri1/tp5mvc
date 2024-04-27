@@ -1,0 +1,28 @@
+﻿@model IEnumerable<tp5mvc.Models.RestosModel.Restaurant>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nom Restaurant</th>
+            <th>Avis</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var restaurant in Model)
+        {
+            <tr>
+                <td>@restaurant.NomResto</td>
+                <td>
+                    <ul>
+                        @foreach (var avis in restaurant.LesAvis)
+                        {
+                            <li>
+                                Nom: @avis.NomPersonne | Note: @avis.Note | Commentaire: @avis.Commentaire
+                            </li>
+                        }
+                    </ul>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
